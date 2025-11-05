@@ -2,6 +2,7 @@ import 'package:desktop_app/src/features/screens/browse_wallpaper_page/browse_wa
 import 'package:desktop_app/src/features/screens/browse_wallpaper_page/widgets/icon_button.dart';
 import 'package:desktop_app/src/features/screens/favorites/favorites.dart';
 import 'package:desktop_app/src/features/screens/homepage/home_screen.dart';
+import 'package:desktop_app/src/features/screens/settings/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -27,9 +28,7 @@ class _WelcomePageScreeenState extends State<WelcomePageScreeen> {
       case 2:
         return SavedWallPapersScreen(); // Replace with your Favorites screen
       case 3:
-        return Center(
-          child: Text('Settings'),
-        ); // Replace with your Settings screen
+        return SettingsScreen(); // Replace with your Settings screen
       default:
         return HomeScreen();
     }

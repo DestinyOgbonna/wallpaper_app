@@ -64,14 +64,21 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   Gap(30.h),
 
                   // Animated layout switch (grid ↔ list)
-                  AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 300),
-                    transitionBuilder: (child, animation) =>
-                        FadeTransition(opacity: animation, child: child),
-                    child: _gridCount == 0
-                        ? const GridItems(key: ValueKey(0))
-                        : const RowItems(key: ValueKey(1)),
-                  ),
+                  isSmallScreen
+                      ? AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 300),
+                          transitionBuilder: (child, animation) =>
+                              FadeTransition(opacity: animation, child: child),
+                          child: const RowItems(key: ValueKey(1)),
+                        )
+                      : AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 300),
+                          transitionBuilder: (child, animation) =>
+                              FadeTransition(opacity: animation, child: child),
+                          child: _gridCount == 0
+                              ? const GridItems(key: ValueKey(0))
+                              : const RowItems(key: ValueKey(1)),
+                        ),
                 ],
               ),
             ),
