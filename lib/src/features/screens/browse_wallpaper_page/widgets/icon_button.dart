@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 class IconButtons extends StatelessWidget {
-  const IconButtons({
+  const IconButtons({super.key, 
     required this.icon,
     required this.text,
     required this.onPressed,

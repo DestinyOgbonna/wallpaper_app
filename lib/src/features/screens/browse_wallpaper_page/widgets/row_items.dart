@@ -52,25 +52,23 @@ class _RowItemsState extends State<RowItems> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.separated(
-        itemCount: categories.length,
-        shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
-        itemBuilder: (context, index) {
-          final category = categories[index];
-          return CategoryCard(
-            title: category['title']!,
-            description: category['description']!,
-            imageUrl: category['image']!,
-          );
-        },
-        separatorBuilder: (context, index) => Divider(
-          height: 3.h,
-          color: Color(0xffCFCFCF),
-          indent: 10,
-          endIndent: 4,
-        ),
+    return ListView.separated(
+      itemCount: categories.length,
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      itemBuilder: (context, index) {
+        final category = categories[index];
+        return CategoryCard(
+          title: category['title']!,
+          description: category['description']!,
+          imageUrl: category['image']!,
+        );
+      },
+      separatorBuilder: (context, index) => Divider(
+        height: 3.h,
+        color: Color(0xffCFCFCF),
+        indent: 10,
+        endIndent: 4,
       ),
     );
   }
